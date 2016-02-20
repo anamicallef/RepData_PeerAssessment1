@@ -6,7 +6,7 @@ output:
 ---
 
 
-This is a R Markdown for the Assestment 1 of Reproducible Research course.
+This is a R Markdown for the Assessment 1 of Reproducible Research course.
 
 
 ##Loading and preprocessing the data

@@ -1,7 +1,12 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
-This is a R Markdown for the Assestment 1 of Reproducible Research course.
+This is a R Markdown for the Assessment 1 of Reproducible Research course.
 
 
 ##Loading and preprocessing the data
@@ -50,7 +55,7 @@ Show the histogram of the total number of steps taken each day.
 hist(sumsteps$steps, main="total number of steps taken each day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
 
 Calculate and report the mean and median of total number of steps taken per day
 
@@ -83,7 +88,7 @@ library(lattice)
 xyplot(meansteps$steps~meansteps$interval, type="l", main="average number of steps taken versus 5-minute intervals")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
 
 
 Calculate the 5-minute interval, on average across all the days in the dataset, that contains the maximum number of steps
@@ -127,7 +132,7 @@ sumsteps1<-aggregate(steps~date, data=datasteps1, sum)
 hist(sumsteps1$steps, main="total number of steps taken each day after missing values were imputed")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
+![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png)
 
 ```r
 mean(sumsteps1$steps)
@@ -149,7 +154,7 @@ These values does not differ a lot from the estimates from the first part of the
 
 ##Are there differences in activity patterns between weekdays and weekends?
 
-Create a new factor variable in the dataset with two levels Â´weekdayÂ´ and Â´weekendÂ´ indicating whether a given date is a weekday or weekend day.
+Create a new factor variable in the dataset with two levels ´weekday´ and ´weekend´ indicating whether a given date is a weekday or weekend day.
 
 
 ```r
@@ -164,5 +169,5 @@ meansteps1<-aggregate(steps~interval+ wend, data=datasteps1, mean)
 xyplot(meansteps1$steps~meansteps1$interval|meansteps1$wend , type="l", layout=c(1,2), main="comparing the average number of steps - weekdays vs. weekends")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png)
 
